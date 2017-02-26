@@ -10,6 +10,13 @@
         <%- partial('post/title', {class_name: 'article-title'}) %>
       </header>
     <% } %>
+    <footer class="article-footer">
+      <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a>
+      <% if (post.comments && config.disqus_shortname){ %>
+        <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comment') %></a>
+      <% } %>
+      <%- partial('post/tag') %>
+    </footer>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
@@ -19,17 +26,16 @@
           </p>
         <% } %>
       <% } else { %>
-        <%- post.content %>
+          <% if(index) { %>
+            <div class="toggle-content">
+              <%- post.content %>
+            </div>
+            <div class="toggle-input article-more-link"><a>Read More +</a></div>
+          <% } else { %>
+            <%- post.content %>
+          <% } %>
       <% } %>
     </div>
-    <footer class="article-footer">
-      <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a>
-      <% if (post.comments && config.disqus_shortname){ %>
-        <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comment') %></a>
-      <% } %>
-      <%- partial('post/tag') %>
-      <p> 1 <p>
-    </footer>
   </div>
   <% if (!index){ %>
     <%- partial('post/nav') %>

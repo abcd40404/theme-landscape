@@ -134,4 +134,15 @@
 
     $container.removeClass('mobile-nav-on');
   });
+
+  $(".toggle-input a").on('click', function() {
+   var content = $(this).parent().prev(".toggle-content");
+   if (!content.css("max-height") || content.css("max-height") == "250px") {
+     content.css("max-height", "99999px");
+     $(this).text("Read More -");
+   } else {
+     content.css("max-height", "250px");
+     $(this).text("Read More +");
+   }
+ });
 })(jQuery);
