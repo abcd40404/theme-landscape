@@ -28,7 +28,7 @@ archive_type: 'monthly'
 show_count: true
 
 # Miscellaneous
-google_analytics:
+google_analytics: UA-92673958-1
 favicon: /f.ico
 twitter:
 google_plus:
