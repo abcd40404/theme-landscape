@@ -4,9 +4,9 @@
   <% }) %>
 <% } else { %>
   <% var last; %>
-  <% page.posts.each(function(post, i){ %>
-    <%- partial('list-post', {post: post, even: i % 2 == 0}) %>
-  <% }) %>
+      <% page.posts.each(function(post, i){ %>
+            <%- partial('list-post', {post: post, even: i % 2 == 0}) %>
+      <% }) %>
   <% if (page.posts.length){ %>
   <% } %>
 <% } %>
