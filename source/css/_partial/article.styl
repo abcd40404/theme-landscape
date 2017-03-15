@@ -16,7 +16,6 @@
   float: left
   line-height: 1em
   color: #ccc
-  text-shadow: 0 1px #fff
   margin-left: 8px
   &:before
     content: "\2022"
@@ -41,7 +40,7 @@
 .article-entry
   @extend $base-style
   clearfix()
-  color: color-default
+  color: #f0f0f0
   padding: 0 article-padding
   p, table
     line-height: line-height
@@ -171,7 +170,7 @@
   line-height: line-height
   border-top: 1px solid color-border
   padding-top: line-height
-  margin: 0 article-padding article-padding
+  margin: 0 article-padding 0
   a
     color: color-grey
     text-decoration: none
