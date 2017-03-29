@@ -26,6 +26,16 @@
           </p>
         <% } %>
       <% } else { %>
+          <% if( (post.toc !== false) && theme.toc.article && !index){ %>
+              <div id="toc" class="toc-article">
+              <h2 class="toc-title"><span>Contents</span></h2>
+              <% if(post.list_number == false) {%>
+                  <%- toc(post.content,{list_number:false}) %>
+              <% }else{ %>
+                  <%- toc(post.content) %>
+              <% } %>
+              </div>
+          <% } %>
           <% if(index) { %>
             <div class="toggle-content">
               <%- post.content %>
